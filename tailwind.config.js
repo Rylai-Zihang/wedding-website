@@ -11,7 +11,8 @@ module.exports = {
       green: colors.emerald,
       purple: colors.violet,
       yellow: colors.amber,
-      pink: colors.fuchsia
+      pink: colors.fuchsia,
+      topicGreen: '#70a076'
     },
     extend: {}
   },

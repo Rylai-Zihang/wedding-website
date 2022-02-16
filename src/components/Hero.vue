@@ -38,7 +38,7 @@ export default defineComponent({
                 <div class="flex items-center justify-between">
                     <div class="logo inline-block">
                         <a href="#">
-                            <img src="../assets/logo.png" class="md:h-12 h-8">
+                            <img src="../assets/pictures/logo.png" class="md:h-12 h-8">
                         </a>
                     </div>
                     <div class="header-nav md:flex-1 md:opacity-100 md:visible md:relative z-100 md:h-fit md:bg-transparent bg-gray-800 fixed h-full inset-0	opacity-0 invisible" :class="{ open: isActive }">
@@ -82,7 +82,7 @@ $member-actions-elements: 2;
 
 @media screen and (max-width: 768px) {
   .hero {
-    background-image: url('./src/assets/hero-min-sm.jpg');
+    background-image: url('./src/assets/pictures/hero-min-sm.jpg');
     min-height: 750px;
     background-position: 60%;
   }
@@ -121,7 +121,7 @@ $member-actions-elements: 2;
 
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: url('./src/assets/hero-min.jpg');
+    background-image: url('./src/assets/pictures/hero-min.jpg');
     min-height: 750px;
     background-position: 0 50%;
   }
