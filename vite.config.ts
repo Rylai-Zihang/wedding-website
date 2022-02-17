@@ -1,7 +1,12 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+const url = require('url')
+import { svgBuilder } from './src/plugins/svgBuilder'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [vue(), svgBuilder('./src/assets/icons/')],
+  server: {
+    host: '0.0.0.0'
+  }
 })
