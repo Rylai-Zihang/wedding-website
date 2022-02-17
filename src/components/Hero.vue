@@ -1,38 +1,30 @@
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
-// TODO data- preload
+import { defineComponent, ref } from 'vue'
 export default defineComponent({
-  data() {
-    return {
-      isActive: false
-    }
-  },
   methods: {
     clickToggle() {
       this.isActive = !this.isActive
-      console.log(this.isActive)
     }
   },
   setup() {
-    const hero = ref<HTMLElement|null>(null)
-    onMounted(() => {
-        const src = hero.value!.getAttribute('data-bg')?.split(',')
-        const html = document.documentElement
-        if(src) {
-            const [desktop, mobile] = src
-            html.style.setProperty('--bg-desktop', `url(${desktop})`)
-            html.style.setProperty('--bg-mobile', `url(${mobile})`)
-        }
-    })
+    const hero = ref<HTMLElement | null>(null)
+    const isActive = ref<boolean>(false)
+
+    function clickToggle() {
+      isActive.value = !isActive.value
+    }
+
     return {
-      hero
+      hero,
+      isActive,
+      clickToggle
     }
   }
 })
 </script>
 
 <template>
-    <section ref="hero" class="hero bg-cover" data-bg="'../assets/hero-min.jpg', '../assets/hero-min-sm.jpg'">
+    <section ref="hero" class="hero bg-cover">
         <section class="navigation bg-fixed font-light">
             <header class="mx-auto w-9/12 px-0 py-6 border-translucency border-b">
                 <div class="flex items-center justify-between">
@@ -41,7 +33,7 @@ export default defineComponent({
                             <img src="../assets/pictures/logo.png" class="md:h-12 h-8">
                         </a>
                     </div>
-                    <div class="header-nav md:flex-1 md:opacity-100 md:visible md:relative z-100 md:h-fit md:bg-transparent bg-gray-800 fixed h-full inset-0	opacity-0 invisible" :class="{ open: isActive }">
+                    <div class="header-nav md:flex-1 md:opacity-100 md:visible md:relative z-10 md:h-fit md:bg-transparent bg-gray-800 fixed h-full inset-0	opacity-0 invisible" :class="{ open: isActive }">
                         <nav class="md:flex md:justify-between md:top-0 md:translate-y-0 relative top-[45%] translate-y-[-45%]">
                             <ul class="primary-nav md:ml-12 m-0 p-0 text-center">
                                 <li>
@@ -64,7 +56,7 @@ export default defineComponent({
                             </ul>
                         </nav>
                     </div>
-                    <div class="navicon w-[35px] absolute right-[3rem] md:hidden" >
+                    <div class="navicon w-[35px] absolute right-[3rem] z-20 md:hidden" >
                       <div class="nav-toggle" @click="clickToggle" :class="{ active: isActive }">
                         <span></span>
                       </div>
@@ -72,7 +64,11 @@ export default defineComponent({
                 </div>
             </header>
         </section>
-        <div class="container"></div>
+        <div class="tp-container md:mt-32 mt-20">
+          <img class="w-32 mx-auto" src="../assets/pictures/flower-top.png">
+          <div class="tp-text md:text-6xl text-3xl  text-white ">We are married</div>
+          <img class="w-32 mx-auto" src="../assets/pictures/flower-bottom.png">
+        </div>
     </section>
 </template>
 
@@ -123,7 +119,7 @@ $member-actions-elements: 2;
   .hero {
     background-image: url('./src/assets/pictures/hero-min.jpg');
     min-height: 750px;
-    background-position: 0 50%;
+    background-position: 0 55%;
   }
 }
 
@@ -174,5 +170,11 @@ $member-actions-elements: 2;
   a {
     line-height: 2.5rem;
   }
+}
+
+.tp-text {
+  font-family: 'Alex Brush', sans-serif;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform-origin: 50% 50% 0px;
 }
 </style>
