@@ -23,6 +23,8 @@ export default {
         <div class="wedding-venue text-sm">
             <p>江苏省苏州市吴中区</p>
             <p>太湖高尔夫酒店</p>
+            <a href="//m.amap.com/navi/?dest=120.391598,31.218124&destName=去太湖高尔夫的路线&key=a1cc03328ca0cb7dbc475381cad9c20f">导航</a>
+            <!-- "iosamap://navi?sourceApplication=appname&amp;poiname=fangheng&amp;lat=36.547901&amp;lon=104.258354&amp;dev=1&amp;style=2">导航</a> -->
         </div>
         <section class="text-center">
             <vue-countdown :time="countdown" :interval="1000" v-slot="{ days, hours, minutes, seconds }">
