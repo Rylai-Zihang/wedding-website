@@ -65,9 +65,12 @@ export default defineComponent({
             </header>
         </section>
         <div class="tp-container md:mt-32 mt-20">
-          <img class="w-32 mx-auto" src="../assets/pictures/flower-top.png">
-          <div class="tp-text md:text-6xl text-3xl  text-white ">We are married</div>
-          <img class="w-32 mx-auto" src="../assets/pictures/flower-bottom.png">
+          <!-- <img class="w-32 mx-auto" src="../assets/pictures/flower-top.png"> -->
+          <div class="tp-text fall-second md:text-4xl text-2xl text-white">
+            Everette <w-icon class="mx-0.5 text-base inline-block" name="love" color="#e60012"></w-icon> Rylai
+          </div>
+          <div class="tp-text fall-first md:text-6xl text-4xl text-white">We are married</div>
+          <!-- <img class="w-32 mx-auto" src="../assets/pictures/flower-bottom.png"> -->
         </div>
     </section>
 </template>
@@ -174,7 +177,39 @@ $member-actions-elements: 2;
 
 .tp-text {
   font-family: 'Alex Brush', sans-serif;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transform-origin: 50% 50% 0px;
+}
+
+.fall-first {
+  opacity: 0;
+  animation: floating-first 1s linear 4s forwards;
+}
+
+.fall-second {
+  opacity: 0;
+  animation: floating-second 1s linear 5s forwards;
+}
+
+@keyframes floating-first {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating-second {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
