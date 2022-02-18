@@ -24,6 +24,7 @@
   width: 50px;
   height: 50px;
 }
+
 .loader-text {
   color: #70a076;
   font-weight: 500;
@@ -48,6 +49,7 @@
     }
   }
 }
+
 .heart {
   position: absolute;
   width: 50px;

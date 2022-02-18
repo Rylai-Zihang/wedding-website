@@ -42,4 +42,9 @@ setTimeout(() => {
 .fade-leave-to {
   opacity: 0;
 }
+
+.show-enter-from,
+.show-leave-to {
+  opacity: 1;
+}
 </style>
