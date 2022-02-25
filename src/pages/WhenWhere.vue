@@ -1,20 +1,20 @@
 <script lang="ts">
-import VueCountdown from '@chenfengyuan/vue-countdown'
-import { defineComponent } from 'vue'
-import { minTwoDigits, judgeClient } from '../utils'
+import VueCountdown from "@chenfengyuan/vue-countdown"
+import { defineComponent } from "vue"
+import { minTwoDigits } from "../utils"
 export default defineComponent({
-  components: {
-    VueCountdown
-  },
-  setup() {
-    const now = new Date().getTime()
-    const weddingDate = new Date(2022, 5, 15, 10, 30, 0).getTime()
-    const countdown: number = weddingDate - now
-    return {
-      countdown,
-      minTwoDigits
+    components: {
+        VueCountdown
+    },
+    setup() {
+        const now = new Date().getTime()
+        const weddingDate = new Date(2022, 5, 15, 10, 30, 0).getTime()
+        const countdown: number = weddingDate - now
+        return {
+            countdown,
+            minTwoDigits
+        }
     }
-  }
 })
 </script>
 
@@ -34,9 +34,9 @@ export default defineComponent({
 		</div>
 		<section class="text-center md:block hidden">
 			<vue-countdown
+				v-slot="{ days, hours, minutes, seconds }"
 				:time="countdown"
-				:interval="1000"
-				v-slot="{ days, hours, minutes, seconds }">
+				:interval="1000">
 				<div class="countdown-wrapper md:w-auto md:justify-center md:flex-row w-36 mx-auto flex flex-col">
 					<div class="countdown-item">
 						<span class="countdown-amount inline-block w-12 text-3xl">{{ days }}</span>
@@ -79,21 +79,21 @@ export default defineComponent({
 
 <style>
 .wedding-date-title {
-  font-family: 'Alex Brush', sans-serif;
+    font-family: "Alex Brush", sans-serif;
 }
 .countdown-item {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 1rem 0;
-  padding: 1.5rem 2rem;
-  background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem 0;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
 }
 .countdown-amount {
-  color: #70a076;
-  font-weight: 500;
+    color: #70a076;
+    font-weight: 500;
 }
 .green-flower-wrapper {
-  left: 50%;
-  bottom: -4rem;
+    left: 50%;
+    bottom: -4rem;
 }
 </style>
