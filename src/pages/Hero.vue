@@ -66,10 +66,10 @@ export default defineComponent({
         </section>
         <div class="tp-container md:mt-32 mt-20">
           <!-- <img class="w-32 mx-auto" src="../assets/pictures/flower-top.png"> -->
-          <div class="tp-text fall-second md:text-4xl text-2xl text-white">
+          <div class="tp-text md:font-medium font-semibold fall-second md:text-4xl text-2xl text-white">
             Everette <w-icon class="mx-0.5 text-base inline-block" name="love" color="#e60012"></w-icon> Rylai
           </div>
-          <div class="tp-text fall-first md:text-6xl text-4xl text-white">We are married</div>
+          <div class="tp-text font-medium fall-first md:text-6xl text-4xl text-white">We are married</div>
           <!-- <img class="w-32 mx-auto" src="../assets/pictures/flower-bottom.png"> -->
         </div>
     </section>
@@ -82,7 +82,7 @@ $member-actions-elements: 2;
 @media screen and (max-width: 768px) {
   .hero {
     background-image: url('./src/assets/pictures/hero-min-sm.jpg');
-    min-height: 750px;
+    min-height: 100vh;
     background-position: 60%;
   }
   .header-nav {
