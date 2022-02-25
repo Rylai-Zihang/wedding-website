@@ -8,7 +8,8 @@
         "build": "vue-tsc --noEmit && vite build",
         "preview": "vite preview",
         "lint:script": "eslint --fix \"src/**/*.ts\"",
-        "lint": "yarn lint:script"
+        "lint": "yarn lint:script",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@chenfengyuan/vue-countdown": "2",
