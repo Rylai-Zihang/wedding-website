@@ -7,8 +7,9 @@
         "start": "vite --host 0.0.0.0",
         "build": "vue-tsc --noEmit && vite build",
         "preview": "vite preview",
-        "lint:script": "eslint --fix \"src/**/*.ts\"",
-        "lint": "yarn lint:script",
+        "lint:es": "eslint --fix ./src/**/*.{ts,vue}",
+        "lint:config": "eslint --fix **.{json,js,html}",
+        "lint": "yarn lint:es",
         "prepare": "husky install"
     },
     "dependencies": {

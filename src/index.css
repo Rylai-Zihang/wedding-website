@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Alex Brush';
-  src: url('./assets/fonts/AlexBrushRegular.ttf');
+    font-family: "Alex Brush";
+    src: url("./assets/fonts/AlexBrushRegular.ttf");
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./assets/fonts/PoppinsRegular.otf');
+    font-family: "Poppins";
+    src: url("./assets/fonts/PoppinsRegular.otf");
 }
