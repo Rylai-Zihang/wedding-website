@@ -35,10 +35,5 @@
         "typescript": "^4.5.4",
         "vite": "^2.8.0",
         "vue-tsc": "^0.29.8"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "echo \"git commit trigger husky pre-commit!\""
-        }
     }
 }
