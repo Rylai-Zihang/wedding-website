@@ -10,7 +10,7 @@
             <div class="heart heart-4"></div>
             <div class="heart heart-5"></div>
         </div>
-        <p class="loader-text">Loading</p>
+        <p class="loader-text text-2xl">Loading</p>
     </div>
 </template>
 
@@ -26,11 +26,12 @@
 }
 
 .loader-text {
+  font-family: 'Alex Brush', sans-serif;
   color: #70a076;
   font-weight: 500;
   position: absolute;
   left: 50%;
-  top: calc(50% + 30px);
+  top: calc(50% + 10px);
   margin-left: -35px;
   &:after {
     position: relative;
