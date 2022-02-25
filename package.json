@@ -38,14 +38,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "echo \"git commit trigger husky pre-commit\""
+            "pre-commit": "echo \"git commit trigger husky pre-commit!\""
         }
-    },
-    "lint-staged": {
-        "src*/**/*.{ts,vue}": [
-            "prettier --config .prettierrc.js --write",
-            "eslint",
-            "git add"
-        ]
     }
 }
