@@ -71,8 +71,8 @@ export default defineComponent({
 				</div>
 			</vue-countdown>
 		</section>
-		<div class="green-flower-wrapper absolute md:w-[516px] md:ml-[-258px] w-full ml-[-50%]">
-			<img class="max-h-full" src="../assets/pictures/green-flower.png" />
+		<div class="green-flower-wrapper absolute w-full ml-[-50%] bg-gradient-to-b from-gray-50 to-white">
+			<img class="max-h-full md:w-[516px] md:ml-[calc(50%-258px)]" src="../assets/pictures/green-flower.png" />
 		</div>
   	</section>
 </template>

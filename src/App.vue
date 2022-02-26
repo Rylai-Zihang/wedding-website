@@ -17,7 +17,7 @@
         <Loading v-show="showLoading" />
     </Transition>
     <Transition name="show">
-        <Home v-show="!showLoading" />
+        <Home v-if="!showLoading" />
     </Transition>
 </template>
 
