@@ -4,10 +4,12 @@
     import Hero from "./Hero.vue"
     import WhenWhere from "./WhenWhere.vue"
     import AboutUs from "./AboutUs.vue"
+    import Process from "./Process.vue"
 </script>
 
 <template>
     <Hero />
     <WhenWhere />
     <AboutUs />
+    <Process />
 </template>
