@@ -1,21 +1,18 @@
 <template>
     <section
-        class="flex lg:w-9/12 md:w-10/12 m-auto py-28 md:flex-row md:justify-around items-center flex-col bg-white"
+        class="flex lg:w-9/12 md:w-10/12 m-auto pt-28 md:pb-28 pb-14 md:flex-row md:justify-around items-center flex-col bg-white"
     >
-        <div class="md:w-72 md:h-72 w-56 h-56 rounded-full overflow-hidden">
-            <div class="figure groom w-full h-full bg-gray-300">
+        <div class="md:w-72 w-56">
+            <div class="figure w-full md:h-72 h-56 rounded-full overflow-hidden bg-gray-300">
                 <img class="h-full" src="../assets/pictures/groom@2x.png" />
             </div>
+            <div class="info text-xl py-8 text-gray-600">🤵🏻：占位符</div>
         </div>
-        <div class="info text-4xl md:py-0 py-8 text-gray-600">
-            <p>Everette LI</p>
-            <p>&</p>
-            <p>Rylai HE</p>
-        </div>
-        <div class="figure bride md:w-72 md:h-72 w-56 h-56 rounded-full overflow-hidden">
-            <div class="figure groom w-full h-full bg-gray-300">
+        <div class="md:w-72 w-56">
+            <div class="figure w-full md:h-72 h-56 rounded-full overflow-hidden bg-gray-300">
                 <img class="h-full" src="../assets/pictures/bride@2x.png" />
             </div>
+            <div class="info text-xl py-8 text-gray-600">👰🏻：占位符</div>
         </div>
     </section>
 </template>
