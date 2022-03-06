@@ -7,14 +7,6 @@
             </div>
             <div class="tp-text font-medium fall-first md:text-6xl text-4xl text-white">We are married</div>
         </div>
-        <!-- <div class="relative text-left bottom-[-200px] px-10 text-white text-base">
-            <p>致亲人和挚友们：</p>
-            <div class="indent-8">
-                <p>李力和我计划于2022年5月15日</p>
-                <p>将彼此四年的陪伴续约为终身</p>
-                <p>我们诚挚地邀请您见证这个时刻</p>
-            </div>
-        </div> -->
     </section>
 </template>
 
