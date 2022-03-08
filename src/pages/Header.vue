@@ -7,7 +7,7 @@
             const header = ref<HTMLElement | null>(null)
 
             onMounted(() => {
-                const height = 1.5 * header.value.clientHeight
+                const height = 1.5 * (header.value?.clientHeight || 0)
                 window.addEventListener("scroll", handleScroll)
                 function handleScroll() {
                     if (window.pageYOffset > height) {
