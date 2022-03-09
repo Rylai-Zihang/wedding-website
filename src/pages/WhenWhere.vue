@@ -22,7 +22,7 @@
     <section class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
         <div class="md:hidden text-base text-left px-16 pb-3 leading-8">
             <p class="">亲爱的家人/好朋友：</p>
-            <div class="indent-0">
+            <div class="indent-0 text-base">
                 <p>当您收到这封婚礼邀请函时</p>
                 <p>我们的婚礼已经迈入倒计时</p>
                 <p>诚邀您参加这场简短而用心的仪式</p>
