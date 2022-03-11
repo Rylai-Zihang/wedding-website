@@ -6,6 +6,8 @@
     import WhenWhere from "./WhenWhere.vue"
     import AboutUs from "./AboutUs.vue"
     import Process from "./Process.vue"
+    import BestMoment from "./BestMoment.vue"
+    import RSVP from "./RSVP.vue"
 </script>
 
 <template>
@@ -14,4 +16,6 @@
     <WhenWhere />
     <AboutUs />
     <Process />
+    <BestMoment />
+    <RSVP />
 </template>

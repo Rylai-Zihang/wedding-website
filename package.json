@@ -14,9 +14,12 @@
     },
     "dependencies": {
         "@chenfengyuan/vue-countdown": "2",
+        "@vuelidate/core": "^2.0.0-alpha.34",
+        "@vuelidate/validators": "^2.0.0-alpha.26",
         "vue": "3"
     },
     "devDependencies": {
+        "@tailwindcss/forms": "^0.5.0",
         "@typescript-eslint/eslint-plugin": "^5.12.1",
         "@typescript-eslint/parser": "^5.12.1",
         "@vitejs/plugin-vue": "^2.2.0",

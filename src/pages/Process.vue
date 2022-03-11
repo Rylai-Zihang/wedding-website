@@ -1,11 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-    <section class="process-container relative bg-fixed bg-cover min-h-[720px]">
+    <section class="process-container relative bg-cover md:bg-fixed min-h-screen">
         <div
-            class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-gray-50 text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-[10%] top-[10%] md:p-10 py-10 px-5"
+            class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 top-[10%] md:p-10 py-10 px-5"
         >
-            <h3 class="process-title text-3xl">Timeline</h3>
+            <h3 class="process-title font-alex text-3xl">Timeline</h3>
             <ul class="process-timeline relative mt-1 h-[60%]">
                 <li
                     class="process-top absolute top-0 left-[50%] md:w-4 md:h-4 w-3 h-3 rounded-2xl border-2 z-10 md:ml-[-5.5px] ml-[-3.5px] bg-topicGreen"
@@ -54,7 +54,7 @@
                     class="process-bottom absolute bottom-0 left-[50%] md:w-4 md:h-4 w-3 h-3 rounded-2xl border-2 z-10 md:ml-[-5.5px] ml-[-3.5px] bg-topicGreen"
                 ></li>
             </ul>
-            <h3 class="process-dress-code text-2xl mt-5">Dress Code</h3>
+            <h3 class="process-dress-code font-alex text-3xl mt-5">Dress Code</h3>
             <div class="px-5">
                 <div class="process-subtitle text-sm text-left mt-2">
                     考虑到与婚礼主色调的一致性，我们为您的出席着装提出以下建议：
@@ -76,10 +76,6 @@
         .process-container {
             background-image: url("./src/assets/pictures/process-bg-sm.jpg");
         }
-    }
-    .process-title,
-    .process-dress-code {
-        font-family: "Alex Brush", sans-serif;
     }
     .process-top {
         content: "";

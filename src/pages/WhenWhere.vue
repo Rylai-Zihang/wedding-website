@@ -20,21 +20,22 @@
 
 <template>
     <section class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
-        <div class="md:hidden text-base text-left px-16 pb-3 leading-8">
-            <p class="">亲爱的家人/好朋友：</p>
-            <div class="indent-0 text-base">
+        <div class="md:hidden text-sm leading-8 text-left px-16 pb-3 leading-8">
+            <p>亲爱的家人/好朋友：</p>
+            <div class="indent-0">
                 <p>当您收到这封婚礼邀请函时</p>
                 <p>我们的婚礼已经迈入倒计时</p>
                 <p>诚邀您参加这场简短而用心的仪式</p>
                 <p>与我们共同见证幸福的时刻</p>
             </div>
         </div>
-        <h3 class="wedding-date-title md:text-5xl text-4xl py-5">May 15th, 2022</h3>
-        <div class="wedding-venue text-base">
+        <h3 class="wedding-date-title font-alex md:text-5xl text-4xl pt-5 pb-3">May 15th, 2022</h3>
+        <div class="wedding-venue text-sm">
             <p class="mb-0.5">江苏省苏州市吴中区太湖高尔夫酒店</p>
-            <div class="flex justify-center items-center text-sm">
+            <div class="flex justify-center items-center leading-6">
                 <w-icon class="mr-0.5 cursor-pointer" name="position" color="#70A076"></w-icon>
                 <a
+                    class="text-xs"
                     href="//m.amap.com/navi/?dest=120.391598,31.218124&destName=去太湖高尔夫的路线&key=a1cc03328ca0cb7dbc475381cad9c20f"
                     >点击查看位置</a
                 >
@@ -70,9 +71,6 @@
 </template>
 
 <style>
-    .wedding-date-title {
-        font-family: "Alex Brush", sans-serif;
-    }
     .countdown-item {
         display: flex;
         flex-direction: column;

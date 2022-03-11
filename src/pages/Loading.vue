@@ -9,7 +9,7 @@
             <div class="heart heart-4"></div>
             <div class="heart heart-5"></div>
         </div>
-        <p class="loader-text text-2xl">Loading</p>
+        <p class="loader-text font-alex text-2xl">Loading</p>
     </div>
 </template>
 
@@ -25,7 +25,6 @@
     }
 
     .loader-text {
-        font-family: "Alex Brush", sans-serif;
         color: #70a076;
         font-weight: 500;
         position: absolute;

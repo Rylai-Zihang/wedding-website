@@ -110,6 +110,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@tailwindcss/forms@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.npmmirror.com/@tailwindcss/forms/-/forms-0.5.0.tgz#d4bea2560a10aac642573e72d3b4d62a88960449"
+  integrity sha512-KzWugryEBFkmoaYcBE18rs6gthWCFHHO7cAZm2/hv3hwD67AzwP7udSCa22E7R1+CEJL/FfhYsJWrc0b1aeSzw==
+  dependencies:
+    mini-svg-data-uri "^1.2.3"
+
 "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.npmmirror.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
@@ -391,6 +398,20 @@
   version "3.2.31"
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.2.31.tgz#c90de7126d833dcd3a4c7534d534be2fb41faa4e"
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
+
+"@vuelidate/core@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npmmirror.com/@vuelidate/core/-/core-2.0.0-alpha.34.tgz#4a2ce2ae18c8ffadb76b296b2c7c0e10a2f48a37"
+  integrity sha512-8SHViBA+bBaXGH8UwcdGG7vEQ8mG8rhtsddJiq9Abz9YvzWxFxd8spAhe9ggfCtyRuvwCCpPbxx63NOGThVZkQ==
+  dependencies:
+    vue-demi "^0.12.0"
+
+"@vuelidate/validators@^2.0.0-alpha.26":
+  version "2.0.0-alpha.26"
+  resolved "https://registry.npmmirror.com/@vuelidate/validators/-/validators-2.0.0-alpha.26.tgz#dbea8d44b7607ac0b4dced36ea3e4641f1617942"
+  integrity sha512-O53AU/dGMMOEPMC6bqhs9JvJAz03z0lLxIDq1tL8bWZylzRWeuF9a2sERxy82t2MnQ+ag15tUpTFpTbaYBm9tg==
+  dependencies:
+    vue-demi "^0.12.0"
 
 acorn-jsx@^5.3.1:
   version "5.3.2"
@@ -2179,6 +2200,11 @@ mimic-fn@^2.1.0:
   resolved "https://registry.npmmirror.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
+mini-svg-data-uri@^1.2.3:
+  version "1.4.3"
+  resolved "https://registry.npmmirror.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.3.tgz#43177b2e93766ba338931a3e2a84a3dfd3a222b8"
+  integrity sha512-gSfqpMRC8IxghvMcxzzmMnWpXAChSA+vy4cia33RgerMS8Fex95akUyQZPbxJJmeBGiGmK7n/1OpUX8ksRjIdA==
+
 minimatch@^3.0.4:
   version "3.1.2"
   resolved "https://registry.npmmirror.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -3405,6 +3431,11 @@ vscode-vue-languageservice@0.29.8:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-pug-languageservice "0.29.8"
     vscode-typescript-languageservice "0.29.8"
+
+vue-demi@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.12.1.tgz#f7e18efbecffd11ab069d1472d7a06e319b4174c"
+  integrity sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==
 
 vue-eslint-parser@^8.0.1:
   version "8.3.0"
