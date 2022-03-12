@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import { reactive } from 'vue' // or '@vue/composition-api' in Vue 2.x
-import { useVuelidate } from '@vuelidate/core'
-import { email, required } from '@vuelidate/validators'
-</script>
+<script setup lang="ts"></script>
 
 <template>
     <div class="rsvp-container relative bg-cover md:bg-fixed min-h-screen">
@@ -88,12 +84,12 @@ import { email, required } from '@vuelidate/validators'
 
 <style>
     .rsvp-container {
-        background-image: url("./src/assets/pictures/rsvp-bg.jpg");
+        background-image: url("../assets/pictures/rsvp-bg.jpg");
         background-position: 55% 0;
     }
     @media screen and (max-width: 768px) {
         .rsvp-container {
-            background-image: url("./src/assets/pictures/rsvp-bg-sm-1.jpg");
+            background-image: url("../assets/pictures/rsvp-bg-sm-1.jpg");
             background-position: 75% 0;
         }
     }

@@ -11,17 +11,15 @@
 </template>
 
 <style lang="scss">
-    @media screen and (max-width: 768px) {
-        .hero {
-            background-image: url("./src/assets/pictures/hero-min-sm.jpg");
-            background-position: 60%;
-        }
+    .hero {
+        background-image: url("../assets/pictures/hero-min.jpg");
+        background-position: 0 55%;
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
         .hero {
-            background-image: url("./src/assets/pictures/hero-min.jpg");
-            background-position: 0 55%;
+            background-image: url("../assets/pictures/hero-min-sm.jpg");
+            background-position: 60%;
         }
     }
 

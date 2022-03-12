@@ -74,7 +74,7 @@
     }
     @media screen and (max-width: 768px) {
         .process-container {
-            background-image: url("./src/assets/pictures/process-bg-sm.jpg");
+            background-image: url("../assets/pictures/process-bg-sm.jpg");
         }
     }
     .process-top {
