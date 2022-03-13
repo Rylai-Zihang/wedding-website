@@ -5,11 +5,16 @@
     import Home from "./pages/Home.vue"
     import { ref } from "vue"
 
-    const showLoading = ref(true)
-    // TODO fix loading toggle logic
-    setTimeout(() => {
-        showLoading.value = false
-    }, 3000)
+    const showLoading = ref(false)
+    // 未加载过
+    if (!localStorage.getItem("wedding-site-loading")) {
+        showLoading.value = true
+        localStorage.setItem("wedding-site-loading", "loaded")
+        // TODO fix loading toggle logic
+        setTimeout(() => {
+            showLoading.value = false
+        }, 3000)
+    }
 </script>
 
 <template>
