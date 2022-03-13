@@ -19,7 +19,7 @@
 </script>
 
 <template>
-    <section class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
+    <section id="venue" class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
         <div class="md:hidden text-sm leading-8 text-left px-16 pb-3 leading-8">
             <p>亲爱的家人/好朋友：</p>
             <div class="indent-0">

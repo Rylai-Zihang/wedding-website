@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-    <section class="process-container relative bg-cover md:bg-fixed min-h-screen">
+    <section id="process" class="process-container relative bg-cover md:bg-fixed min-h-screen">
         <div
             class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 top-[10%] md:p-10 py-10 px-5"
         >
