@@ -13,7 +13,7 @@
 
             const openGMap = () => {
                 const [latEnd, lonEnd, destination] = [31.218124, 120.391598, "苏州太湖高尔夫酒店"]
-                let [usrLat, usrLon] = [undefined, undefined]
+                let usrLat: number | undefined, usrLon: number | undefined
                 if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function (position) {
                         usrLat = position.coords.longitude
