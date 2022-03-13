@@ -16,12 +16,15 @@ module.exports = {
             topicGreen: "#70a076",
             halfTransparent: "rgba(255, 255, 255, 0.7)",
             headerGreenLight: "rgba(145, 160, 160, 0.88)",
-            headerGreen: "rgba(145, 160, 160)",
+            headerGreen: "rgba(145, 160, 160)"
         },
         fontFamily: {
             alex: ["Alex Brush", "sans-serif"]
         },
         extend: {
+            padding: {
+                "1/12": "8.333333333333333%"
+            },
             inset: {
                 "1/12": "8.333333333333333%"
             }

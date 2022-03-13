@@ -3,7 +3,7 @@
 <template>
     <section id="RSVP" class="rsvp-container relative bg-cover md:bg-fixed min-h-screen">
         <div
-            class="rsvp-form absolute top-20 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 shadow py-10 px-8"
+            class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
             <h3 class="text-3xl font-alex mb-5">Join With Us</h3>
             <form>
