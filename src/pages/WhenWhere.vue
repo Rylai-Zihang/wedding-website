@@ -8,7 +8,7 @@
         },
         setup() {
             const now = new Date().getTime()
-            const weddingDate = new Date(2022, 5, 15, 10, 30, 0).getTime()
+            const weddingDate = new Date(2022, 4, 15, 10, 30, 0).getTime()
             const countdown: number = weddingDate - now
             return {
                 countdown,
