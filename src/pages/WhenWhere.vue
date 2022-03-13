@@ -10,9 +10,29 @@
             const now = new Date().getTime()
             const weddingDate = new Date(2022, 4, 15, 10, 30, 0).getTime()
             const countdown: number = weddingDate - now
+
+            const openGMap = () => {
+                const [latEnd, lonEnd, destination] = [31.218124, 120.391598, "苏州太湖高尔夫酒店"]
+                let [usrLat, usrLon] = [undefined, undefined]
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        usrLat = position.coords.longitude
+                        usrLon = position.coords.latitude
+                    })
+                }
+                // 获取到用户定位信息 -走导航模式
+                // 未获取到用户定位信息 - 走单点标注模式
+                if (usrLat && usrLon) {
+                    window.location.href = `https://uri.amap.com/navigation?from=${usrLon},${usrLat},我的位置&to=${lonEnd},${latEnd},${destination}&mode=driving&policy=1&src=mypage&coordinate=gaode&callnative=1`
+                } else {
+                    window.location.href = `https://uri.amap.com/marker?position=${lonEnd},${latEnd}&name=${destination}&src=mypage&coordinate=gaode&callnative=1`
+                }
+            }
+
             return {
                 countdown,
-                minTwoDigits
+                minTwoDigits,
+                openGMap
             }
         }
     })
@@ -20,7 +40,7 @@
 
 <template>
     <section id="venue" class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
-        <div class="md:hidden text-sm leading-8 text-left px-16 pb-3 leading-8">
+        <div class="md:hidden text-sm text-left px-16 pb-3 leading-8">
             <p>亲爱的家人/好朋友：</p>
             <div class="indent-0">
                 <p>当您收到这封婚礼邀请函时</p>
@@ -34,13 +54,8 @@
             <p class="mb-0.5">江苏省苏州市吴中区太湖高尔夫酒店</p>
             <div class="flex justify-center items-center leading-6">
                 <w-icon class="mr-0.5 cursor-pointer" name="position" color="#70A076"></w-icon>
-                <a
-                    class="text-xs"
-                    href="//m.amap.com/navi/?dest=120.391598,31.218124&destName=去太湖高尔夫的路线&key=a1cc03328ca0cb7dbc475381cad9c20f"
-                    >点击查看位置</a
-                >
+                <a class="text-xs" @click="openGMap">点击查看位置</a>
             </div>
-            <!-- "iosamap://navi?sourceApplication=appname&amp;poiname=fangheng&amp;lat=36.547901&amp;lon=104.258354&amp;dev=1&amp;style=2">导航</a> -->
         </div>
         <section class="text-center md:block hidden">
             <vue-countdown v-slot="{ days, hours, minutes, seconds }" :time="countdown" :interval="1000">

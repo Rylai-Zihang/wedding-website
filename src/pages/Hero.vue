@@ -25,12 +25,12 @@
 
     .fall-first {
         opacity: 0;
-        animation: floating-first 1s linear 1s forwards;
+        animation: floating-first 1s linear 0s forwards;
     }
 
     .fall-second {
         opacity: 0;
-        animation: floating-second 1s linear 2s forwards;
+        animation: floating-second 1s linear 1s forwards;
     }
 
     @keyframes floating-first {
