@@ -8,8 +8,8 @@ const hasViewBox = /(viewBox="[^>+].*?")/g
 
 const clearReturn = /(\r)|(\n)/g
 
-function findSvgFile(dir: string) {
-    const svgRes: string[] = []
+function findSvgFile(dir) {
+    const svgRes = []
     const dirent = readdirSync(dir, {
         withFileTypes: true
     })
@@ -23,7 +23,7 @@ function findSvgFile(dir: string) {
                 .replace(svgTitle, ($1, $2) => {
                     let width = 0
                     let height = 0
-                    let content = $2.replace(clearHeightWidth, (s1: unknown, s2: string, s3: number) => {
+                    let content = $2.replace(clearHeightWidth, (s1, s2, s3) => {
                         if (s2 === "width") {
                             width = s3
                         } else if (s2 === "height") {
@@ -43,13 +43,13 @@ function findSvgFile(dir: string) {
     return svgRes
 }
 
-export const svgBuilder = (path: string, perfix = "icon") => {
+export const svgBuilder = (path, perfix = "icon") => {
     if (path === "") return
     idPerfix = perfix
     const res = findSvgFile(path)
     return {
         name: "svg-transform",
-        transformIndexHtml(html: string) {
+        transformIndexHtml(html) {
             return html.replace(
                 "<body>",
                 `
