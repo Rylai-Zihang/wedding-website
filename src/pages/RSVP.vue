@@ -1,4 +1,28 @@
-<script setup lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from "vue"
+import { string, number, object } from "yup"
+import { Field, Form, ErrorMessage } from 'vee-validate'
+    export default defineComponent({
+        components: {
+            Field,
+            Form,
+            ErrorMessage
+        },
+        setup() {
+            const schema = object({
+                name: string().required(),
+                mobile: string().required(),
+            })
+            const onSubmit = () => {
+                console.log('submit')
+            }
+            return {
+                onSubmit,
+                schema
+            }
+        }
+    })
+</script>
 
 <template>
     <section id="RSVP" class="rsvp-container relative bg-cover md:bg-fixed min-h-screen">
@@ -6,14 +30,12 @@
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
             <h3 class="text-3xl font-alex mb-5">Join With Us</h3>
-            <form>
+            <Form @submit="onSubmit" :validation-schema="schema">
                 <label class="block mb-5">
                     <span class="block text-sm text-left">姓名</span>
-                    <input
-                        type="text"
-                        placeholder="请输入姓名"
-                        class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
-                    />
+                    <Field placeholder="请输入姓名" name="name"
+                    class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none" />
+                    <ErrorMessage name="name" />
                 </label>
                 <label class="block mb-5">
                     <span class="block text-sm text-left">联系方式</span>
