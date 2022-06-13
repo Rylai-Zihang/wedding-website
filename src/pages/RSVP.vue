@@ -1,7 +1,11 @@
 <script lang="ts">
     import { defineComponent } from "vue"
-    import { string, object, number, boolean } from "yup"
+    import { string, object, number } from "yup"
     import { Field, Form, ErrorMessage } from "vee-validate"
+    import { createOrUpdateGuest } from "../api"
+    import { humpToLine } from "../utils"
+    import { GuestBody } from "../../typings"
+
     export default defineComponent({
         components: {
             Field,
@@ -17,8 +21,12 @@
                 invitationCode: number().typeError("请输入一组数字").required("请输入您的邀请码"),
                 message: string().max(20, "留言不多于20个字符")
             })
-            const onSubmit = (values) => {
-                
+            const onSubmit = (guest) => {
+                const body = Object.entries(guest).reduce((previous, current) => {
+                    const [key, value] = current
+                    return Object.assign(previous, { [humpToLine(key)]: value })
+                }, {})
+                createOrUpdateGuest(body as GuestBody)
             }
             const onInvalidSubmit = ({ values, errors, results }) => {
                 console.log(values) // current form values
