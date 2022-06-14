@@ -15,7 +15,7 @@
         setup() {
             const schema = object({
                 name: string().required("请输入您的姓名"),
-                mobile: string(),
+                number: string(),
                 extras: number().typeError("请输入一个数字").required("请输入您的同行人数"),
                 needAccommodation: number().required(),
                 invitationCode: number().typeError("请输入一组数字").required("请输入您的邀请码"),
@@ -66,10 +66,10 @@
                         type="search"
                         clearable
                         placeholder="请输入您的俩系方式"
-                        name="mobile"
+                        name="number"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                     />
-                    <ErrorMessage name="mobile" class="inline-block w-full text-left text-xs text-topicGreen" />
+                    <ErrorMessage name="number" class="inline-block w-full text-left text-xs text-topicGreen" />
                 </label>
                 <label class="block mb-5">
                     <span class="block text-sm text-left">同行人数</span>

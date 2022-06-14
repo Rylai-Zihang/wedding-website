@@ -10,7 +10,9 @@ const axiosInstance = axios.create({
     baseURL: "/wedding/v1",
     // 超时设置
     timeout: 15000,
-    headers: { "Content-Type": "application/jsoncharset=utf-8" }
+    headers: {
+        "Content-Type": "application/json;charset=utf-8"
+    }
 })
 
 const service: Service = Object.assign(axiosInstance, {
