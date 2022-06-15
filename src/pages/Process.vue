@@ -3,7 +3,7 @@
 <template>
     <section id="process" class="process-container relative bg-cover md:bg-fixed min-h-screen">
         <div
-            class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 top-[10%] md:p-10 py-10 px-5"
+            class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 inset-y-1/12 md:p-10 py-10 px-5"
         >
             <h3 class="process-title font-alex text-3xl">Timeline</h3>
             <ul class="process-timeline relative mt-1 h-[60%]">
@@ -56,8 +56,8 @@
             </ul>
             <h3 class="process-dress-code font-alex text-3xl mt-5">Dress Code</h3>
             <div class="px-5">
-                <div class="process-subtitle text-sm text-left mt-2">
-                    考虑到与婚礼主色调的一致性，我们为您的出席着装提出以下建议：
+                <div class="process-subtitle text-sm leading-6 text-left mt-2">
+                    📢：我们邀请了超优秀的摄影老师，给大家拍摄好看的照片。 为统一拍摄效果，出席着装建议按照以下风格~：
                 </div>
                 <ul class="process-timeline text-sm leading-6 relative mt-2 text-left">
                     <li>女士：白色/米色/杏色 连衣裙/套装</li>
