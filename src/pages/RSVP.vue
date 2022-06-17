@@ -142,12 +142,12 @@
 
 <style>
     .rsvp-container {
-        background-image: url("../assets/pictures/rsvp-bg.jpg");
+        background-image: url("../assets/pictures/rsvp-bg.jpeg");
         background-position: 55% 0;
     }
     @media screen and (max-width: 768px) {
         .rsvp-container {
-            background-image: url("../assets/pictures/rsvp-bg-sm-1.jpg");
+            background-image: url("../assets/pictures/rsvp-bg-sm-1.jpeg");
             background-position: 75% 0;
         }
     }

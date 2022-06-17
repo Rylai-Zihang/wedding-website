@@ -70,11 +70,11 @@
 
 <style lang="scss">
     .process-container {
-        background-image: url("../assets/pictures/process-bg.jpg");
+        background-image: url("../assets/pictures/process-bg.jpeg");
     }
     @media screen and (max-width: 768px) {
         .process-container {
-            background-image: url("../assets/pictures/process-bg-sm.jpg");
+            background-image: url("../assets/pictures/process-bg-sm.jpeg");
         }
     }
     .process-top {

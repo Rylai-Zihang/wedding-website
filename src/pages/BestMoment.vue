@@ -29,13 +29,20 @@
                 <p>超过一半的相处时光都在两地度过...</p>
             </div>
             <div class="swiper-container w-11/12 md:w-8/12 lg:w-6/12 mt-2">
-                <swiper class="swiper" :pagination="true" :modules="modules">
+                <swiper
+                    class="swiper"
+                    :lazy="true"
+                    :space-between="30"
+                    :effect="'fade'"
+                    :pagination="true"
+                    :modules="modules"
+                >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-1-1.jpg" />
+                        <img src="../assets/pictures/best-moment-1-1.jpeg" />
                     </swiper-slide>
-                    <!-- <swiper-slide> <img src="../assets/pictures/best-moment-2.jpg" /></swiper-slide> -->
+                    <!-- <swiper-slide> <img src="../assets/pictures/best-moment-2.jpeg" /></swiper-slide> -->
                     <!-- <swiper-slide>
-                    <img class="" src="../assets/pictures/best-moment-3.jpg" />
+                    <img class="" src="../assets/pictures/best-moment-3.jpeg" />
                 </swiper-slide> -->
                 </swiper>
             </div>
@@ -54,15 +61,15 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-2-1.jpg" />
+                        <img src="../assets/pictures/best-moment-2-1.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-2-2.jpg" />
+                        <img src="../assets/pictures/best-moment-2-2.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div
                     ></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-2-3.jpg" />
+                        <img src="../assets/pictures/best-moment-2-3.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                 </swiper>
@@ -81,11 +88,11 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-3-3.jpg" />
+                        <img src="../assets/pictures/best-moment-3-3.jpeg" />
                     </swiper-slide>
-                    <swiper-slide> <img src="../assets/pictures/best-moment-3-2.jpg" /></swiper-slide>
+                    <swiper-slide> <img src="../assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-3-1.jpg" />
+                        <img src="../assets/pictures/best-moment-3-1.jpeg" />
                     </swiper-slide>
                 </swiper>
             </div>
@@ -109,11 +116,11 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-4-1.jpg" />
+                        <img src="../assets/pictures/best-moment-4-1.jpeg" />
                     </swiper-slide>
-                    <swiper-slide> <img src="../assets/pictures/best-moment-4-2.jpg" /></swiper-slide>
+                    <swiper-slide> <img src="../assets/pictures/best-moment-4-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-4-3.jpg" />
+                        <img src="../assets/pictures/best-moment-4-3.jpeg" />
                     </swiper-slide>
                 </swiper>
             </div>
