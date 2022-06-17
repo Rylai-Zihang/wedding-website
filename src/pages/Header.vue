@@ -7,7 +7,7 @@
             const header = ref<HTMLElement | null>(null)
 
             onMounted(() => {
-                const height = 1.5 * header.value.clientHeight
+                const height = 1.5 * (header.value?.clientHeight || 0)
                 window.addEventListener("scroll", handleScroll)
                 function handleScroll() {
                     if (window.pageYOffset > height) {
@@ -22,11 +22,18 @@
                 isActive.value = !isActive.value
             }
 
+            function clickMobileNav() {
+                if (isActive.value) {
+                    isActive.value = !isActive.value
+                }
+            }
+
             return {
                 header,
                 isActive,
                 isOpacity,
-                clickToggle
+                clickToggle,
+                clickMobileNav
             }
         }
     })
@@ -57,21 +64,21 @@
                     >
                         <ul class="primary-nav md:ml-12 m-0 p-0 text-center">
                             <li>
-                                <a href="#aboutUs">关于我们</a>
+                                <a href="#venue" @click="clickMobileNav">婚礼地点</a>
                             </li>
                             <li>
-                                <a href="#schedule">婚礼日程</a>
+                                <a href="#process" @click="clickMobileNav">婚礼日程</a>
                             </li>
                             <li>
-                                <a href="#photoSharing">影像收集</a>
+                                <a href="#bestMoment" @click="clickMobileNav">关于我们</a>
                             </li>
                         </ul>
                         <ul class="member-actions">
                             <li>
-                                <a href="#venue">婚礼地点</a>
-                            </li>
-                            <li>
-                                <a class="inline-block py-0 px-4 rounded-2xl border-white border-2" href="#rsvp"
+                                <a
+                                    class="inline-block py-0 px-4 rounded-2xl border-white border-2"
+                                    href="#RSVP"
+                                    @click="clickMobileNav"
                                     >来宾登记</a
                                 >
                             </li>
