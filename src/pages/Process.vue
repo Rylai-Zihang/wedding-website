@@ -54,7 +54,7 @@
                     class="process-bottom absolute bottom-0 left-[50%] md:w-4 md:h-4 w-3 h-3 rounded-2xl border-2 z-10 md:ml-[-5.5px] ml-[-3.5px] bg-topicGreen"
                 ></li>
             </ul>
-            <h3 class="process-dress-code font-alex text-3xl mt-5">Dress Code</h3>
+            <h3 class="process-dress-code font-alex text-3xl mt-8">Dress Code</h3>
             <div class="px-5">
                 <div class="process-subtitle text-sm leading-6 text-left mt-2">
                     📢：我们邀请了超优秀的摄影老师，给大家拍摄好看的照片。 为统一拍摄效果，出席着装建议按照以下风格~：

@@ -40,14 +40,15 @@
 
 <template>
     <section id="venue" class="md:pt-28 md:pb-48 pt-16 pb-28 bg-gray-50 text-gray-600 relative">
-        <div class="text-sm text-left px-20 pb-2 leading-8">
+        <div class="text-sm text-left px-20 pb-2 leading-8 lg:hidden">
             <p>亲爱的家人/朋友们：</p>
             <div class="indent-0">
                 <p>我们诚挚地邀请您和您的家人</p>
                 <p>参加一场简短而用心的户外婚礼</p>
                 <p>这里有久违的老友、青绿的草坪</p>
-                <p>有美味的果汁，还有属于你我的美好回忆</p>
-                <p>让我们一起度过，这个夏日里难忘的一天</p>
+                <p>有美味的果汁、人气超高的小狗⑧</p>
+                <p>还有属于你我的美好回忆ღ( ´･ᴗ･` )</p>
+                <p>让我们一起度过这个夏日里难忘的一天</p>
             </div>
         </div>
         <h3 class="wedding-date-title font-alex md:text-5xl text-4xl pt-5 pb-3">July 10th, 2022</h3>

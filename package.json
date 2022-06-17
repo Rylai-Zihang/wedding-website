@@ -16,6 +16,7 @@
         "@chenfengyuan/vue-countdown": "2",
         "axios": "^0.27.2",
         "fs": "^0.0.1-security",
+        "swiper": "^8.2.4",
         "vee-validate": "^4.5.11",
         "vue": "3",
         "yup": "^0.32.11"
