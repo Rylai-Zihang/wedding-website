@@ -5,14 +5,7 @@ export type GuestBody = {
     need_accommodation: boolean
     invitation_code: string
     message?: string
+    token: string
 }
 
-export type Guest = {
-    name: string
-    number?: string
-    extras: number
-    needAccommodation: boolean
-    invitationCode: string
-    message?: string
-}
-
+export type AlertType = "success" | "error" | "warning"

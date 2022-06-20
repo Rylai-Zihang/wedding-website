@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from "axios"
+import { TIME_OUT, TOKEN } from "./../constants"
 
 type Service = AxiosInstance & {
     loading: boolean
@@ -9,9 +10,10 @@ const axiosInstance = axios.create({
     // 服务接口请求
     baseURL: "/wedding/v1",
     // 超时设置
-    timeout: 15000,
+    timeout: TIME_OUT,
     headers: {
-        "Content-Type": "application/json;charset=utf-8"
+        "Content-Type": "application/json;charset=utf-8",
+        token: TOKEN
     }
 })
 
@@ -72,18 +74,15 @@ service.interceptors.response.use(
     (res) => {
         hideLoading()
         const code = res.data["code"]
-        // 获取错误信息
-        const msg = res.data["errorMessage"]
         if (code === 200) {
-            return Promise.resolve(res.data)
+            return Promise.resolve(res.data.response)
         } else {
-            console.log(msg)
-            return Promise.reject(res.data)
+            return Promise.reject(res.data.response)
         }
     },
     (error) => {
         hideLoading()
-        return Promise.reject(error)
+        return Promise.reject(error.response.data)
     }
 )
 
