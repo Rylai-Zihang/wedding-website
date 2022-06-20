@@ -4,7 +4,7 @@
     import { Field, Form, ErrorMessage } from "vee-validate"
     import { createOrUpdateGuest } from "../api"
     import { humpToLine } from "../utils"
-    import { GuestBody } from "../../typings"
+    import { Guest, GuestBody } from "../../typings"
 
     export default defineComponent({
         components: {
@@ -21,7 +21,7 @@
                 invitationCode: number().typeError("请输入一组数字").required("请输入您的邀请码"),
                 message: string().max(20, "留言不多于20个字符")
             })
-            const onSubmit = (guest) => {
+            const onSubmit = (guest: Guest) => {
                 const body = Object.entries(guest).reduce((previous, current) => {
                     const [key, value] = current
                     return Object.assign(previous, { [humpToLine(key)]: value })
