@@ -1,5 +1,5 @@
 import { GuestBody } from "../../typings"
-import service from "../utils/request"
+import { service } from "../utils"
 
 export const createOrUpdateGuest = (data: GuestBody) => {
     return service({

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { defineComponent } from "vue"
+    import { defineComponent, reactive } from "vue"
     import { string, object, number } from "yup"
-    import { Field, Form, ErrorMessage } from "vee-validate"
+    import { Field, Form, ErrorMessage, SubmissionHandler } from "vee-validate"
     import { createOrUpdateGuest } from "../api"
     import { humpToLine } from "../utils"
     import { GuestBody } from "../../typings"
@@ -13,30 +13,49 @@
             ErrorMessage
         },
         setup() {
+            const state = reactive({
+                alertMessage: "",
+                alertType: "",
+                alertShow: false
+            })
+
+            const phoneRegExp = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
             const schema = object({
                 name: string().required("请输入您的姓名"),
-                number: string(),
+                number: string().matches(phoneRegExp, "请输入正确的联系方式"),
                 extras: number().typeError("请输入一个数字").required("请输入您的同行人数"),
                 needAccommodation: number().required(),
                 invitationCode: number().typeError("请输入一组数字").required("请输入您的邀请码"),
                 message: string().max(20, "留言不多于20个字符")
             })
-            const onSubmit = (guest) => {
+            const onSubmit: SubmissionHandler<Record<string, unknown>, Promise<unknown>> = (guest) => {
                 const body = Object.entries(guest).reduce((previous, current) => {
                     const [key, value] = current
                     return Object.assign(previous, { [humpToLine(key)]: value })
                 }, {})
-                createOrUpdateGuest(body as GuestBody)
+                return createOrUpdateGuest(body as GuestBody)
+                    .then(() => {
+                        state.alertType = "success"
+                        state.alertMessage = "提交成功！"
+                        state.alertShow = true
+                        setTimeout(() => {
+                            state.alertShow = false
+                        }, 3000)
+                    })
+                    .catch((error) => {
+                        state.alertType = "warning"
+                        state.alertMessage = error.message
+                        state.alertShow = true
+                    })
             }
-            const onInvalidSubmit = ({ values, errors, results }) => {
-                console.log(values) // current form values
-                console.log(errors) // a map of field names and their first error message
-                console.log(results) // a detailed map of field names and their validation results
+            const onInvalidSubmit = () => {
+                console.log("errors in submit")
             }
             return {
                 onSubmit,
                 onInvalidSubmit,
-                schema
+                schema,
+                state
             }
         }
     })
@@ -48,6 +67,7 @@
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
             <h3 class="text-3xl font-alex mb-5">Join With Us</h3>
+            <w-alert :visible="state.alertShow" :type="state.alertType" :message="state.alertMessage"></w-alert>
             <Form :validation-schema="schema" @submit="onSubmit" @invalid-submit="onInvalidSubmit">
                 <label class="block mb-5">
                     <span class="block text-sm text-left">姓名</span>
@@ -58,18 +78,18 @@
                         name="name"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                     />
-                    <ErrorMessage name="name" class="inline-block w-full text-left text-xs text-topicGreen" />
+                    <ErrorMessage name="name" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
                 <label class="block mb-5">
                     <span class="block text-sm text-left">联系方式</span>
                     <Field
                         type="search"
                         clearable
-                        placeholder="请输入您的俩系方式"
+                        placeholder="请输入您的联系方式"
                         name="number"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                     />
-                    <ErrorMessage name="number" class="inline-block w-full text-left text-xs text-topicGreen" />
+                    <ErrorMessage name="number" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
                 <label class="block mb-5">
                     <span class="block text-sm text-left">同行人数</span>
@@ -81,7 +101,7 @@
                         pattern="[0-9]*"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                     />
-                    <ErrorMessage name="extras" class="inline-block w-full text-left text-xs text-topicGreen" />
+                    <ErrorMessage name="extras" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
                 <div class="text-sm mb-5">
                     <span class="block text-left">需安排前一晚的住宿</span>
@@ -117,7 +137,7 @@
                     />
                     <ErrorMessage
                         name="invitationCode"
-                        class="inline-block w-full text-left text-xs text-topicGreen pt-1"
+                        class="inline-block w-full text-left text-xs text-yellow-700 pt-1"
                     />
                 </label>
                 <label class="block mb-5">
@@ -128,7 +148,7 @@
                         placeholder="请输入您的留言"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none"
                     />
-                    <ErrorMessage name="message" class="inline-block w-full text-left text-xs text-topicGreen" />
+                    <ErrorMessage name="message" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
                 <button
                     class="block w-[100%] mt-10 px-6 py-2.5 bg-headerGreenLight text-white leading-tight rounded shadow-md hover:bg-headerGreen hover:shadow-lg focus:bg-headerGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-headerGreen active:shadow-lg transition duration-150 ease-in-out"

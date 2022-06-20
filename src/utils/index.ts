@@ -1,3 +1,4 @@
+import service from "./request"
 function minTwoDigits(n: number): string {
     return ("0" + n).slice(-2)
 }
@@ -5,4 +6,4 @@ function minTwoDigits(n: number): string {
 function humpToLine(key: string) {
     return key.replace(/([A-Z])/g, "_$1").toLowerCase()
 }
-export { minTwoDigits, humpToLine }
+export { minTwoDigits, humpToLine, service }
