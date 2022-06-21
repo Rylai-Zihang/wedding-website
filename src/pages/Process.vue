@@ -1,7 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-    <section id="process" class="process-container relative bg-cover md:bg-fixed min-h-screen">
+    <section id="process" class="relative bg-cover md:bg-fixed min-h-screen">
+        <v-lazy-image
+            class="bg-img"
+            src="../src/assets/pictures/process-bg-sm.jpeg"
+            srcset="../src/assets/pictures/process-bg-sm.jpeg 768w, ../src/assets/pictures/process-bg.jpeg"
+        ></v-lazy-image>
         <div
             class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 inset-y-1/12 md:p-10 py-10 px-5"
         >
@@ -69,14 +74,6 @@
 </template>
 
 <style lang="scss">
-    .process-container {
-        background-image: url("../assets/pictures/process-bg.jpeg");
-    }
-    @media screen and (max-width: 768px) {
-        .process-container {
-            background-image: url("../assets/pictures/process-bg-sm.jpeg");
-        }
-    }
     .process-top {
         content: "";
         display: block;

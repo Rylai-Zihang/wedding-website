@@ -15,3 +15,9 @@ html {
     font-family: "Poppins";
     src: url("./assets/fonts/PoppinsRegular.otf");
 }
+
+@layer utilities {
+    .bg-img {
+        @apply pointer-events-none absolute w-full h-full -z-0;
+    }
+}

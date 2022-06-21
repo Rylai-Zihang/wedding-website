@@ -22,14 +22,14 @@
 
 <template>
     <section id="bestMoment" class="best-moment-container relative bg-white min-h-screen py-10">
-        <h3 class="text-3xl font-alex mb-5">1568 + Days -> +∞</h3>
+        <h3 class="text-3xl font-alex mb-5">1568 Days -> +∞</h3>
         <div class="images-container px-1/12 overflow-hidden text-sm leading-6 lg:text-md lg:leading-8">
             <div class="text-left">
                 <p>我们曾经经历了接近三年的异地恋</p>
                 <p>超过一半的相处时光都在两地度过</p>
             </div>
             <div class="swiper-container w-11/12 md:w-8/12 lg:w-6/12 mt-2 mb-4">
-                <img src="../assets/pictures/best-moment-1-1.jpeg" />
+                <v-lazy-image src="../src/assets/pictures/best-moment-1-1.jpeg" />
             </div>
 
             <div class="text-right">
@@ -46,15 +46,15 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-2-1.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-2-1.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-2-2.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-2-2.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div
                     ></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-2-3.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-2-3.jpeg" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                 </swiper>
@@ -74,11 +74,11 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-3-3.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-3-3.jpeg" />
                     </swiper-slide>
-                    <swiper-slide> <img src="../assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
+                    <swiper-slide> <v-lazy-image src="../src/assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-3-1.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-3-1.jpeg" />
                     </swiper-slide>
                 </swiper>
             </div>
@@ -100,11 +100,11 @@
                     :modules="modules"
                 >
                     <swiper-slide class="mb-10">
-                        <img src="../assets/pictures/best-moment-4-1.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-4-1.jpeg" />
                     </swiper-slide>
-                    <swiper-slide> <img src="../assets/pictures/best-moment-4-2.jpeg" /></swiper-slide>
+                    <swiper-slide> <v-lazy-image src="../src/assets/pictures/best-moment-4-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <img src="../assets/pictures/best-moment-4-3.jpeg" />
+                        <v-lazy-image src="../src/assets/pictures/best-moment-4-3.jpeg" />
                     </swiper-slide>
                 </swiper>
             </div>

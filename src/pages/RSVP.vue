@@ -62,7 +62,12 @@
 </script>
 
 <template>
-    <section id="RSVP" class="rsvp-container relative bg-cover md:bg-fixed min-h-screen">
+    <section id="RSVP" class="relative bg-cover md:bg-fixed min-h-screen">
+        <v-lazy-image
+            class="bg-img"
+            src="../src/assets/pictures/rsvp-bg-sm.jpeg"
+            srcset="../src/assets/pictures/rsvp-bg-sm.jpeg 768w, ../src/assets/pictures/rsvp-bg.jpeg"
+        ></v-lazy-image>
         <div
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
@@ -159,16 +164,3 @@
         </div>
     </section>
 </template>
-
-<style>
-    .rsvp-container {
-        background-image: url("../assets/pictures/rsvp-bg.jpeg");
-        background-position: 55% 0;
-    }
-    @media screen and (max-width: 768px) {
-        .rsvp-container {
-            background-image: url("../assets/pictures/rsvp-bg-sm-1.jpeg");
-            background-position: 75% 0;
-        }
-    }
-</style>
