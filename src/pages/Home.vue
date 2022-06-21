@@ -8,6 +8,7 @@
     import Process from "./Process.vue"
     import BestMoment from "./BestMoment.vue"
     import RSVP from "./RSVP.vue"
+    import Footer from "./Footer.vue"
 </script>
 
 <template>
@@ -18,4 +19,5 @@
     <Process />
     <BestMoment />
     <RSVP />
+    <Footer />
 </template>
