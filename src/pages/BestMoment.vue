@@ -37,17 +37,9 @@
                 <p>在一块的每一天，我们都不想浪费</p>
             </div>
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
-                <swiper
-                    class="swiper"
-                    :lazy="true"
-                    :space-between="30"
-                    :effect="'fade'"
-                    :pagination="true"
-                    :modules="modules"
-                >
+                <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
                         <v-lazy-image src="../src/assets/pictures/best-moment-2-1.jpeg" />
-                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                     <swiper-slide>
                         <v-lazy-image src="../src/assets/pictures/best-moment-2-2.jpeg" />
@@ -55,7 +47,6 @@
                     ></swiper-slide>
                     <swiper-slide>
                         <v-lazy-image src="../src/assets/pictures/best-moment-2-3.jpeg" />
-                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </swiper-slide>
                 </swiper>
             </div>
@@ -65,18 +56,11 @@
                 <p>“有道理...好！”</p>
             </div>
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12">
-                <swiper
-                    class="swiper"
-                    :lazy="true"
-                    :space-between="30"
-                    :effect="'fade'"
-                    :pagination="true"
-                    :modules="modules"
-                >
+                <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
                         <v-lazy-image src="../src/assets/pictures/best-moment-3-3.jpeg" />
                     </swiper-slide>
-                    <swiper-slide> <v-lazy-image src="../src/assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
+                    <swiper-slide><v-lazy-image src="../src/assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
                     <swiper-slide>
                         <v-lazy-image src="../src/assets/pictures/best-moment-3-1.jpeg" />
                     </swiper-slide>
@@ -91,14 +75,7 @@
                 <p>携手走向人生的正无穷</p>
             </div>
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
-                <swiper
-                    class="swiper"
-                    :lazy="true"
-                    :space-between="30"
-                    :effect="'fade'"
-                    :pagination="true"
-                    :modules="modules"
-                >
+                <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
                         <v-lazy-image src="../src/assets/pictures/best-moment-4-1.jpeg" />
                     </swiper-slide>
