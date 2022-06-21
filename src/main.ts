@@ -4,4 +4,5 @@ import Icon from "./components/Icon.vue"
 import Alert from "./components/Alert.vue"
 import "./index.css"
 
-createApp(App).component("w-icon", Icon).component("w-alert", Alert).mount("#app")
+const app = createApp(App)
+app.component("w-icon", Icon).component("w-alert", Alert).mount("#app")
