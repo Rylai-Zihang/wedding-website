@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { defineComponent, reactive } from "vue"
+    import { defineComponent, reactive, getCurrentInstance } from "vue"
     import { string, object, number } from "yup"
     import { Field, Form, ErrorMessage, SubmissionHandler } from "vee-validate"
     import { createOrUpdateGuest } from "../api"
@@ -13,6 +13,8 @@
             ErrorMessage
         },
         setup() {
+            const app = getCurrentInstance()
+            const isPC = app?.appContext.config.globalProperties.$isPC
             const state = reactive({
                 alertMessage: "",
                 alertType: "",
@@ -55,14 +57,17 @@
                 onSubmit,
                 onInvalidSubmit,
                 schema,
-                state
+                state,
+                isPC
             }
         }
     })
 </script>
 
 <template>
-    <section id="RSVP" class="rsvp-container relative bg-cover md:bg-fixed min-h-screen">
+    <section id="RSVP" class="relative min-h-screen">
+        <div v-if="isPC" class="bg-container bg-cover md:bg-fixed"></div>
+        <v-lazy-image v-else class="bg-img" src="../src/assets/pictures/rsvp-bg-sm.jpeg"></v-lazy-image>
         <div
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
@@ -160,15 +165,9 @@
     </section>
 </template>
 
-<style>
-    .rsvp-container {
+<style scoped>
+    .bg-container {
         background-image: url("../assets/pictures/rsvp-bg.jpeg");
         background-position: 55% 0;
-    }
-    @media screen and (max-width: 768px) {
-        .rsvp-container {
-            background-image: url("../assets/pictures/rsvp-bg-sm-1.jpeg");
-            background-position: 75% 0;
-        }
     }
 </style>

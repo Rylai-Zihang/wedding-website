@@ -6,4 +6,12 @@ function minTwoDigits(n: number): string {
 function humpToLine(key: string) {
     return key.replace(/([A-Z])/g, "_$1").toLowerCase()
 }
-export { minTwoDigits, humpToLine, service }
+
+function isPC() {
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        return false
+    }
+    return true
+}
+
+export { minTwoDigits, humpToLine, isPC, service }
