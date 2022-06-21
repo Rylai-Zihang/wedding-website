@@ -1,12 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+    import { getCurrentInstance } from "vue"
+    const app = getCurrentInstance()
+    const isPC = app?.appContext.config.globalProperties.$isPC
+</script>
 
 <template>
     <section id="process" class="relative bg-cover md:bg-fixed min-h-screen">
-        <v-lazy-image
-            class="bg-img"
-            src="../src/assets/pictures/process-bg-sm.jpeg"
-            srcset="../src/assets/pictures/process-bg-sm.jpeg 768w, ../src/assets/pictures/process-bg.jpeg"
-        ></v-lazy-image>
+        <div v-if="isPC" class="bg-container bg-cover md:bg-fixed"></div>
+        <v-lazy-image v-else class="bg-img" src="../src/assets/pictures/process-bg-sm.jpeg"></v-lazy-image>
         <div
             class="process-card absolute lg:w-4/12 md:w-5/12 w-10/12 h-5/6 bg-white text-gray-600 rounded-xl shadow-xl ring-1 ring-gray-900/5 left-1/12 inset-y-1/12 md:p-10 py-10 px-5"
         >
@@ -73,7 +74,7 @@
     </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .process-top {
         content: "";
         display: block;
@@ -92,5 +93,9 @@
     }
     .process-info {
         margin-top: 3%;
+    }
+    .bg-container {
+        background-image: url("../assets/pictures/process-bg.jpeg");
+        background-position: 55% 0;
     }
 </style>
