@@ -7,19 +7,9 @@ import { svgBuilder } from "./src/plugins/svgBuilder"
 export default ({ command, mode }) => {
     return defineConfig({
         plugins: [vue(), svgBuilder("./src/assets/icons/")],
-        // TODO resolve
-        // resolve: {
-        //     alias: [
-        //         {
-        //             find: "/@/",
-        //             replacement: resolve(__dirname, "./src")
-        //         },
-        //         {
-        //             find: "/@pic/*",
-        //             replacement: resolve(__dirname, "./src/assets/pictures/*")
-        //         }
-        //     ]
-        // },
+        alias: {
+            "@": resolve(__dirname, "./src")
+        },
         server: {
             port: 3002,
             host: "0.0.0.0",

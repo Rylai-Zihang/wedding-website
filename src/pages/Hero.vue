@@ -12,13 +12,13 @@
 
 <style lang="scss">
     .hero {
-        background-image: url("../assets/pictures/hero-min.jpeg");
+        background-image: url("@/assets/pictures/hero-min.jpeg");
         background-position: 0 55%;
     }
 
     @media screen and (max-width: 768px) {
         .hero {
-            background-image: url("../assets/pictures/hero-min-sm.jpeg");
+            background-image: url("@/assets/pictures/hero-min-sm.jpeg");
             background-position: 60%;
         }
     }

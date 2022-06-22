@@ -1,5 +1,6 @@
 <script lang="ts">
     import { defineComponent, ref } from "vue"
+    import bgm from "@/assets/bgm/M01.ogg"
     export default defineComponent({
         setup() {
             const audio = ref<HTMLAudioElement>()
@@ -19,7 +20,8 @@
             return {
                 audio,
                 toggle,
-                playing
+                playing,
+                bgm
             }
         }
     })
@@ -27,7 +29,7 @@
 <template>
     <div class="fixed bottom-6 md:bottom-10 right-2 z-10">
         <audio ref="audio" hidden="true" loop="true">
-            <source src="../assets/bgm/M01.ogg" />
+            <source :src="bgm" />
         </audio>
         <button :class="{ rotated: playing, 'cursor-pointer': true }" class="mx-2 text-xl md: text-2xl" @click="toggle">
             <w-icon class="inline-block" name="music" color="#DACFCC"></w-icon>

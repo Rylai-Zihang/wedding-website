@@ -5,6 +5,16 @@
     import "swiper/css/pagination"
     import "swiper/css/effect-fade"
     import "swiper/css/effect-coverflow"
+    import moment1 from "@/assets/pictures/best-moment-1-1.jpeg"
+    import moment2 from "@/assets/pictures/best-moment-2-1.jpeg"
+    import moment3 from "@/assets/pictures/best-moment-2-2.jpeg"
+    import moment4 from "@/assets/pictures/best-moment-2-3.jpeg"
+    import moment5 from "@/assets/pictures/best-moment-3-1.jpeg"
+    import moment6 from "@/assets/pictures/best-moment-3-2.jpeg"
+    import moment7 from "@/assets/pictures/best-moment-3-3.jpeg"
+    import moment8 from "@/assets/pictures/best-moment-4-1.jpeg"
+    import moment9 from "@/assets/pictures/best-moment-4-2.jpeg"
+    import moment10 from "@/assets/pictures/best-moment-4-3.jpeg"
 
     import { defineComponent } from "vue"
     export default defineComponent({
@@ -14,7 +24,17 @@
         },
         setup() {
             return {
-                modules: [Lazy, Pagination, EffectFade, EffectCoverflow]
+                modules: [Lazy, Pagination, EffectFade, EffectCoverflow],
+                moment1,
+                moment2,
+                moment3,
+                moment4,
+                moment5,
+                moment6,
+                moment7,
+                moment8,
+                moment9,
+                moment10
             }
         }
     })
@@ -29,9 +49,8 @@
                 <p>超过一半的相处时光都在两地度过</p>
             </div>
             <div class="swiper-container w-11/12 md:w-8/12 lg:w-6/12 mt-2 mb-4">
-                <v-lazy-image src="../src/assets/pictures/best-moment-1-1.jpeg" />
+                <v-lazy-image :src="moment1" />
             </div>
-
             <div class="text-right">
                 <p>也正因为如此~</p>
                 <p>在一块的每一天，我们都不想浪费</p>
@@ -39,14 +58,13 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image src="../src/assets/pictures/best-moment-2-1.jpeg" />
+                        <v-lazy-image :src="moment2" />
                     </swiper-slide>
                     <swiper-slide>
-                        <v-lazy-image src="../src/assets/pictures/best-moment-2-2.jpeg" />
-                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div
-                    ></swiper-slide>
+                        <v-lazy-image :src="moment3" />
+                    </swiper-slide>
                     <swiper-slide>
-                        <v-lazy-image src="../src/assets/pictures/best-moment-2-3.jpeg" />
+                        <v-lazy-image :src="moment4" />
                     </swiper-slide>
                 </swiper>
             </div>
@@ -58,11 +76,13 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image src="../src/assets/pictures/best-moment-3-3.jpeg" />
+                        <v-lazy-image :src="moment5" />
                     </swiper-slide>
-                    <swiper-slide><v-lazy-image src="../src/assets/pictures/best-moment-3-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <v-lazy-image src="../src/assets/pictures/best-moment-3-1.jpeg" />
+                        <v-lazy-image :src="moment6" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <v-lazy-image :src="moment7" />
                     </swiper-slide>
                 </swiper>
             </div>
@@ -77,11 +97,13 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image src="../src/assets/pictures/best-moment-4-1.jpeg" />
+                        <v-lazy-image :src="moment8" />
                     </swiper-slide>
-                    <swiper-slide> <v-lazy-image src="../src/assets/pictures/best-moment-4-2.jpeg" /></swiper-slide>
                     <swiper-slide>
-                        <v-lazy-image src="../src/assets/pictures/best-moment-4-3.jpeg" />
+                        <v-lazy-image :src="moment9" />
+                    </swiper-slide>
+                    <swiper-slide>
+                        <v-lazy-image :src="moment10" />
                     </swiper-slide>
                 </swiper>
             </div>

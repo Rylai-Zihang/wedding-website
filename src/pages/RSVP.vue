@@ -5,6 +5,7 @@
     import { createOrUpdateGuest } from "../api"
     import { humpToLine } from "../utils"
     import { GuestBody } from "../../typings"
+    import backgroundSM from "@/assets/pictures/rsvp-bg-sm.jpeg"
 
     export default defineComponent({
         components: {
@@ -59,7 +60,8 @@
                 isPC,
                 alertType,
                 alertMessage,
-                alertShow
+                alertShow,
+                backgroundSM
             }
         }
     })
@@ -68,7 +70,7 @@
 <template>
     <section id="RSVP" class="relative min-h-screen">
         <div v-if="isPC" class="bg-container bg-cover md:bg-fixed"></div>
-        <v-lazy-image v-else class="bg-img" src="../src/assets/pictures/rsvp-bg-sm.jpeg"></v-lazy-image>
+        <v-lazy-image v-else class="bg-img" :src="backgroundSM"></v-lazy-image>
         <div
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
@@ -168,7 +170,7 @@
 
 <style scoped>
     .bg-container {
-        background-image: url("../assets/pictures/rsvp-bg.jpeg");
+        background-image: url("@/assets/pictures/rsvp-bg.jpeg");
         background-position: 55% 0;
     }
 </style>
