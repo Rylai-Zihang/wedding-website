@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent, ref } from "vue"
-    import bgm from "@/assets/bgm/M01.ogg"
+    import bgm from "@/assets/bgm/M01.mp3"
     export default defineComponent({
         setup() {
             const audio = ref<HTMLAudioElement>()
