@@ -52,7 +52,7 @@
             <div class="flex items-center justify-between">
                 <div class="logo inline-block">
                     <a href="#">
-                        <img src="../assets/pictures/logo.png" class="md:h-12 h-8" />
+                        <img src="@/assets/pictures/logo.png" class="md:h-12 h-8" />
                     </a>
                 </div>
                 <div
@@ -75,12 +75,7 @@
                         </ul>
                         <ul class="member-actions">
                             <li>
-                                <a
-                                    class="inline-block py-0 px-4 rounded-2xl border-white border-2"
-                                    href="#RSVP"
-                                    @click="clickMobileNav"
-                                    >来宾登记</a
-                                >
+                                <a class="inline-block py-0 px-4" href="#RSVP" @click="clickMobileNav">来宾登记</a>
                             </li>
                         </ul>
                     </nav>
