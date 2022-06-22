@@ -9,6 +9,7 @@
     import BestMoment from "./BestMoment.vue"
     import RSVP from "./RSVP.vue"
     import Footer from "./Footer.vue"
+    import BGM from "./BGM.vue"
 </script>
 
 <template>
@@ -20,4 +21,5 @@
     <BestMoment />
     <RSVP />
     <Footer />
+    <BGM />
 </template>

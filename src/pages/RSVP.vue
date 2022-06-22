@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { defineComponent, reactive, getCurrentInstance } from "vue"
+    import { defineComponent, ref, getCurrentInstance } from "vue"
     import { string, object, number } from "yup"
     import { Field, Form, ErrorMessage, SubmissionHandler } from "vee-validate"
     import { createOrUpdateGuest } from "../api"
@@ -15,11 +15,10 @@
         setup() {
             const app = getCurrentInstance()
             const isPC = app?.appContext.config.globalProperties.$isPC
-            const state = reactive({
-                alertMessage: "",
-                alertType: "",
-                alertShow: false
-            })
+
+            const alertMessage = ref<string>("")
+            const alertType = ref<string>("")
+            const alertShow = ref<boolean>(false)
 
             const phoneRegExp = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
             const schema = object({
@@ -37,17 +36,17 @@
                 }, {})
                 return createOrUpdateGuest(body as GuestBody)
                     .then(() => {
-                        state.alertType = "success"
-                        state.alertMessage = "提交成功！"
-                        state.alertShow = true
+                        alertType.value = "success"
+                        alertMessage.value = "提交成功！"
+                        alertShow.value = true
                         setTimeout(() => {
-                            state.alertShow = false
+                            alertShow.value = false
                         }, 3000)
                     })
                     .catch((error) => {
-                        state.alertType = "warning"
-                        state.alertMessage = error.message
-                        state.alertShow = true
+                        alertType.value = "warning"
+                        alertMessage.value = error.message
+                        alertShow.value = true
                     })
             }
             const onInvalidSubmit = () => {
@@ -57,8 +56,10 @@
                 onSubmit,
                 onInvalidSubmit,
                 schema,
-                state,
-                isPC
+                isPC,
+                alertType,
+                alertMessage,
+                alertShow
             }
         }
     })
@@ -72,7 +73,7 @@
             class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
             <h3 class="text-3xl font-alex mb-5">Join With Us</h3>
-            <w-alert :visible="state.alertShow" :type="state.alertType" :message="state.alertMessage"></w-alert>
+            <w-alert :visible="alertShow" :type="alertType" :message="alertMessage"></w-alert>
             <Form :validation-schema="schema" @submit="onSubmit" @invalid-submit="onInvalidSubmit">
                 <label class="block mb-5">
                     <span class="block text-sm text-left">姓名</span>
