@@ -68,16 +68,16 @@
 </script>
 
 <template>
-    <section id="RSVP" class="relative min-h-screen">
+    <section id="RSVP" class="relative flex items-center">
         <div v-if="isPC" class="bg-container bg-cover md:bg-fixed"></div>
         <v-lazy-image v-else class="bg-img" :src="backgroundSM"></v-lazy-image>
         <div
-            class="rsvp-form absolute top-10 lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
+            class="rsvp-form absolute lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
-            <h3 class="text-3xl font-alex mb-5">Join With Us</h3>
+            <h3 class="text-3xl font-alex mb-3">Join With Us</h3>
             <w-alert :visible="alertShow" :type="alertType" :message="alertMessage"></w-alert>
             <Form :validation-schema="schema" @submit="onSubmit" @invalid-submit="onInvalidSubmit">
-                <label class="block mb-5">
+                <label class="block mb-3">
                     <span class="block text-sm text-left">姓名</span>
                     <Field
                         type="search"
@@ -88,7 +88,7 @@
                     />
                     <ErrorMessage name="name" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
-                <label class="block mb-5">
+                <label class="block mb-3">
                     <span class="block text-sm text-left">联系方式</span>
                     <Field
                         type="search"
@@ -99,7 +99,7 @@
                     />
                     <ErrorMessage name="number" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
-                <label class="block mb-5">
+                <label class="block mb-3">
                     <span class="block text-sm text-left">同行人数</span>
                     <Field
                         name="extras"
@@ -111,7 +111,7 @@
                     />
                     <ErrorMessage name="extras" class="inline-block w-full text-left text-xs text-yellow-700" />
                 </label>
-                <div class="text-sm mb-5">
+                <div class="text-sm mb-3">
                     <span class="block text-left">需安排前一晚的住宿</span>
                     <div class="flex justify-start">
                         <label class="inline-flex items-center mt-3 mr-4">
@@ -133,7 +133,7 @@
                         </label>
                     </div>
                 </div>
-                <label class="block mb-5">
+                <label class="block mb-3">
                     <span class="block text-sm text-left">邀请码</span>
                     <Field
                         name="invitationCode"
@@ -148,7 +148,7 @@
                         class="inline-block w-full text-left text-xs text-yellow-700 pt-1"
                     />
                 </label>
-                <label class="block mb-5">
+                <label class="block mb-3">
                     <span class="block text-sm text-left">留言</span>
                     <Field
                         name="message"
@@ -172,5 +172,11 @@
     .bg-container {
         background-image: url("@/assets/pictures/rsvp-bg.jpeg");
         background-position: 55% 0;
+    }
+    #RSVP {
+        min-height: 110vh;
+    }
+    input[type="search"] {
+        border-radius: 0.375rem;
     }
 </style>
