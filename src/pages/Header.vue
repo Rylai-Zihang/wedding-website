@@ -1,6 +1,10 @@
 <script lang="ts">
     import { defineComponent, onMounted, ref } from "vue"
     export default defineComponent({
+        props: {
+            // eslint-disable-next-line vue/require-default-prop
+            route: String
+        },
         setup() {
             const isActive = ref<boolean>(false)
             const isOpacity = ref<boolean>(true)
@@ -42,8 +46,8 @@
 <template>
     <section
         ref="header"
-        :class="{ 'bg-transparent': isOpacity }"
         class="header block fixed w-full top-0 z-[100] navigation font-light"
+        :class="{ 'bg-transparent': isOpacity, 'bg-headerGreenLight': !isOpacity }"
     >
         <header
             class="mx-auto w-9/12 px-0 py-6 border-translucency"
@@ -56,6 +60,7 @@
                     </a>
                 </div>
                 <div
+                    v-if="route === 'home'"
                     class="header-nav md:flex-1 md:opacity-100 md:visible md:relative z-10 md:h-fit md:bg-transparent bg-gray-800 fixed h-full inset-0 opacity-0 invisible"
                     :class="{ open: isActive }"
                 >
@@ -80,7 +85,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="navicon absolute right-[3rem] z-20 md:hidden">
+                <div v-if="route === 'home'" class="navicon absolute right-[3rem] z-20 md:hidden">
                     <div class="nav-toggle w-[35px] h-[35px]" :class="{ active: isActive }" @click="clickToggle">
                         <span></span>
                     </div>
@@ -96,7 +101,6 @@
 
     .header {
         transition: all 300ms ease-in-out;
-        background-color: rgba(145, 160, 160, 0.88);
     }
     @media screen and (max-width: 768px) {
         .header-nav {

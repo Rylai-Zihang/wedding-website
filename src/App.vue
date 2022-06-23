@@ -1,29 +1,53 @@
-<script setup lang="ts">
-    // This starter template is using Vue 3 <script setup> SFCs
-    // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-    import Loading from "./pages/Loading.vue"
-    import Home from "./pages/Home.vue"
-    import { ref } from "vue"
-
-    const showLoading = ref(false)
-    // 未加载过
-    if (!localStorage.getItem("wedding-site-loading")) {
-        showLoading.value = true
-        localStorage.setItem("wedding-site-loading", "loaded")
-        // TODO fix loading toggle logic
-        setTimeout(() => {
-            showLoading.value = false
-        }, 3000)
-    }
+<script lang="ts">
+    import { ref, watch, defineComponent } from "vue"
+    import { useRouter } from "vue-router"
+    import Header from "@/pages/Header.vue"
+    import Footer from "@/pages/Footer.vue"
+    import BGM from "@/pages/BGM.vue"
+    export default defineComponent({
+        components: {
+            Header,
+            Footer,
+            BGM
+        },
+        setup() {
+            const showLoading = ref(false)
+            const router = useRouter()
+            // 未加载过
+            if (!localStorage.getItem("wedding-site-loading")) {
+                router.push({
+                    name: "loading"
+                })
+                showLoading.value = true
+                localStorage.setItem("wedding-site-loading", "loaded")
+                setTimeout(() => {
+                    showLoading.value = false
+                }, 3000)
+            }
+            watch(
+                showLoading,
+                (value) => {
+                    if (!value) {
+                        router.push({
+                            name: "home"
+                        })
+                    }
+                },
+                { immediate: true }
+            )
+        }
+    })
 </script>
 
 <template>
-    <Transition name="fade">
-        <Loading v-show="showLoading" />
-    </Transition>
-    <Transition name="show">
-        <Home v-if="!showLoading" />
-    </Transition>
+    <router-view v-slot="{ Component, route }">
+        <Header v-if="route.meta.showHeader" :route="route.name" />
+        <transition :name="route.meta.transitionName">
+            <component :is="Component" />
+        </transition>
+        <BGM v-if="route.meta.showHeader" />
+        <Footer v-if="route.meta.showHeader" />
+    </router-view>
 </template>
 
 <style>

@@ -2,9 +2,10 @@
     import { defineComponent, ref, getCurrentInstance } from "vue"
     import { string, object, number } from "yup"
     import { Field, Form, ErrorMessage, SubmissionHandler } from "vee-validate"
+    import { useRouter } from "vue-router"
     import { createOrUpdateGuest } from "../api"
-    import { humpToLine } from "../utils"
     import { GuestBody } from "../../typings"
+    import { humpToLine } from "../utils"
     import backgroundSM from "@/assets/pictures/rsvp-bg-sm.jpeg"
 
     export default defineComponent({
@@ -20,6 +21,8 @@
             const alertMessage = ref<string>("")
             const alertType = ref<string>("")
             const alertShow = ref<boolean>(false)
+
+            const router = useRouter()
 
             const phoneRegExp = /^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/
             const schema = object({
@@ -43,6 +46,9 @@
                         setTimeout(() => {
                             alertShow.value = false
                         }, 3000)
+                        router.push({
+                            name: "feedback"
+                        })
                     })
                     .catch((error) => {
                         alertType.value = "warning"
