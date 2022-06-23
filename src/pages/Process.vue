@@ -24,7 +24,7 @@
                     </div>
                     <div class="process-time flex justify-center items-center relative w-1/2">
                         <w-icon class="mx-2 text-2xl inline-block" name="arrive" color="#70a076"></w-icon>
-                        <p class="text-base">10:18AM</p>
+                        <p class="text-base">10:28AM</p>
                     </div>
                 </li>
                 <li class="process-item relative h-1/4 flex px-0 items-center">
@@ -34,7 +34,7 @@
                     </div>
                     <div class="process-time flex justify-center items-center relative w-1/2">
                         <w-icon class="mx-2 text-2xl inline-block" name="ceremony" color="#70a076"></w-icon>
-                        <p class="text-base">10:58AM</p>
+                        <p class="text-base">11:08AM</p>
                     </div>
                 </li>
                 <li class="process-item relative h-1/4 flex px-0 items-center">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="process-time flex justify-center items-center relative w-1/2">
                         <w-icon class="mx-2 text-2xl inline-block" name="photo" color="#70a076"></w-icon>
-                        <p class="text-base">11:48AM</p>
+                        <p class="text-base">11:38AM</p>
                     </div>
                 </li>
                 <li class="process-item relative h-1/4 flex px-0 items-center">
