@@ -47,7 +47,8 @@
                 <p>参加一场简短而用心的户外婚礼</p>
                 <p>这里有久违的老友、青绿的草坪</p>
                 <p>还有属于你我的美好回忆ღ( ´･ᴗ･` )</p>
-                <p>让我们一起度过，夏日里难忘的一天</p>
+                <p>让我们一起度过</p>
+                <p>夏日里难忘的一天</p>
             </div>
         </div>
         <h3 class="wedding-date-title font-alex md:text-5xl text-4xl pt-5 pb-3">July 10th, 2022</h3>
