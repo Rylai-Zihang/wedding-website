@@ -27,7 +27,7 @@
     })
 </script>
 <template>
-    <div class="fixed bottom-6 md:bottom-10 right-2 z-10">
+    <div class="fixed bottom-4 md:bottom-10 right-2 z-10">
         <audio ref="audio" hidden="true" loop="true">
             <source :src="bgm" />
         </audio>
