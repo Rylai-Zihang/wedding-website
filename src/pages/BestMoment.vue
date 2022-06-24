@@ -49,7 +49,7 @@
                 <p>超过一半的相处时光都在两地度过</p>
             </div>
             <div class="swiper-container w-11/12 md:w-8/12 lg:w-6/12 mt-2 mb-4">
-                <v-lazy-image :src="moment1" />
+                <img :src="moment1" />
             </div>
             <div class="text-right">
                 <p>也正因为如此~</p>
@@ -58,7 +58,7 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image :src="moment2" />
+                        <img :src="moment2" />
                     </swiper-slide>
                     <swiper-slide>
                         <v-lazy-image :src="moment3" />
@@ -76,7 +76,7 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image :src="moment5" />
+                        <img :src="moment5" />
                     </swiper-slide>
                     <swiper-slide>
                         <v-lazy-image :src="moment6" />
@@ -97,7 +97,7 @@
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
                     <swiper-slide class="mb-10">
-                        <v-lazy-image :src="moment8" />
+                        <img :src="moment8" />
                     </swiper-slide>
                     <swiper-slide>
                         <v-lazy-image :src="moment9" />
