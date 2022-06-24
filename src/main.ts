@@ -1,12 +1,11 @@
 import { createApp } from "vue"
+import VLazyImage from "v-lazy-image"
 import App from "./App.vue"
 import Icon from "./components/Icon.vue"
 import Alert from "./components/Alert.vue"
-import VLazyImage from "v-lazy-image"
 import { isPC } from "../src/utils"
-import router from './route'
+import router from "./route"
 import "./index.css"
-
 
 const app = createApp(App)
 app.config.globalProperties.$isPC = isPC()

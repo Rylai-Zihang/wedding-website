@@ -69,18 +69,20 @@
                     >
                         <ul class="primary-nav md:ml-12 m-0 p-0 text-center">
                             <li>
-                                <a href="#venue" @click="clickMobileNav">婚礼地点</a>
+                                <router-link :to="{ hash: '#venue' }" @click="clickMobileNav">婚礼地点</router-link>
                             </li>
                             <li>
-                                <a href="#process" @click="clickMobileNav">婚礼日程</a>
+                                <router-link :to="{ hash: '#process' }" @click="clickMobileNav">婚礼日程</router-link>
                             </li>
                             <li>
-                                <a href="#bestMoment" @click="clickMobileNav">关于我们</a>
+                                <router-link :to="{ hash: '#bestMoment' }" @click="clickMobileNav"
+                                    >关于我们</router-link
+                                >
                             </li>
                         </ul>
                         <ul class="member-actions">
                             <li>
-                                <a class="inline-block py-0 px-4" href="#RSVP" @click="clickMobileNav">来宾登记</a>
+                                <router-link :to="{ hash: '#RSVP' }" @click="clickMobileNav">来宾登记</router-link>
                             </li>
                         </ul>
                     </nav>

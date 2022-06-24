@@ -16,6 +16,7 @@
         "@chenfengyuan/vue-countdown": "2",
         "axios": "^0.27.2",
         "fs": "^0.0.1-security",
+        "smooth-scroll-into-view-if-needed": "^1.1.33",
         "swiper": "^8.2.4",
         "v-lazy-image": "^2.1.1",
         "vee-validate": "^4.5.11",
