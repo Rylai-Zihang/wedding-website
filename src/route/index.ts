@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router"
+import { createRouter, createWebHashHistory, RouterScrollBehavior } from "vue-router"
 
 const home = () => import("../pages/Home.vue")
 const feedback = () => import("../pages/Feedback.vue")
@@ -26,9 +26,25 @@ const routes = [
     }
 ]
 
+const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
+    if (to.hash) {
+        setTimeout(() => {
+            const element = document.getElementById(to.hash.replace(/#/, ""))
+            if (element && element.scrollIntoView) {
+                element.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" })
+            }
+        }, 500)
+        return { selector: to.hash }
+    } else if (savedPosition) {
+        return savedPosition
+    }
+    return { top: 0 }
+}
+
 const router = createRouter({
     history: createWebHashHistory(),
-    routes: routes
+    routes: routes,
+    scrollBehavior
 })
 
 export default router
