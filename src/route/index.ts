@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouterScrollBehavior } from "vue-router"
+import scrollIntoView from "smooth-scroll-into-view-if-needed"
 
 const home = () => import("../pages/Home.vue")
 const feedback = () => import("../pages/Feedback.vue")
@@ -30,10 +31,15 @@ const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
     if (to.hash) {
         setTimeout(() => {
             const element = document.getElementById(to.hash.replace(/#/, ""))
-            if (element && element.scrollIntoView) {
-                element.scrollIntoView({ block: "start", inline: "nearest", behavior: "smooth" })
+            if (element) {
+                scrollIntoView(element, {
+                    scrollMode: "if-needed",
+                    block: "start",
+                    inline: "nearest",
+                    behavior: "smooth"
+                })
             }
-        }, 500)
+        }, 300)
         return { selector: to.hash }
     } else if (savedPosition) {
         return savedPosition

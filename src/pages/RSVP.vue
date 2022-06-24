@@ -74,10 +74,11 @@
 </script>
 
 <template>
-    <section id="RSVP" class="relative flex items-center">
+    <section id="RSVP-container" class="relative flex items-center">
         <div v-if="isPC" class="bg-container bg-cover md:bg-fixed"></div>
         <v-lazy-image v-else class="bg-img" :src="backgroundSM"></v-lazy-image>
         <div
+            id="RSVP"
             class="rsvp-form absolute lg:w-4/12 md:w-5/12 w-10/12 left-1/12 z-10 mx-auto bg-white text-gray-600 rounded-xl ring-1 ring-gray-900/5 shadow py-10 px-8 mb-30"
         >
             <h3 class="text-3xl font-alex mb-3">Join With Us</h3>
@@ -179,7 +180,7 @@
         background-image: url("@/assets/pictures/rsvp-bg.jpeg");
         background-position: 55% 0;
     }
-    #RSVP {
+    #RSVP-container {
         min-height: 110vh;
     }
     input[type="search"] {
