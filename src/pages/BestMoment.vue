@@ -53,7 +53,7 @@
             </div>
             <div class="text-right">
                 <p>也正因为如此~</p>
-                <p>在一块的每一天，我们都不想浪费</p>
+                <p>在一起的每一天，我们都不想浪费</p>
             </div>
             <div class="swiper-container mt-2 w-11/12 md:w-8/12 lg:w-6/12 ml-1/12 md:ml-4/12 lg:ml-6/12">
                 <swiper class="swiper" :space-between="30" :effect="'fade'" :pagination="true" :modules="modules">
